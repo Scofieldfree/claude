@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+
+  <!-- 主页面 -->
+  <url>
+    <loc>https://scofieldfee.github.io/claude-introduce/</loc>
+    <lastmod>2025-05-23T12:00:00+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <mobile:mobile/>
+    <image:image>
+      <image:loc>https://scofieldfee.github.io/claude-introduce/assets/images/claude-4-og-image.jpg</image:loc>
+      <image:caption>Claude 4 AI编程助手深度解析 - 性能测试与实战指南</image:caption>
+      <image:title>Claude 4 横空出世：AI 编程新王者如何重塑开发生态</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://scofieldfee.github.io/claude-introduce/assets/images/claude-4-performance.jpg</image:loc>
+      <image:caption>Claude 4 SWE-bench 性能测试结果图表</image:caption>
+      <image:title>Claude 4 性能测试结果</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://scofieldfee.github.io/claude-introduce/assets/images/claude-code-screenshot.jpg</image:loc>
+      <image:caption>Claude Code IDE 集成界面截图</image:caption>
+      <image:title>Claude Code 正式发布</image:title>
+    </image:image>
+  </url>
+
+  <!-- 页面锚点链接 -->
+  <url>
+    <loc>https://scofieldfee.github.io/claude-introduce/#performance</loc>
+    <lastmod>2025-05-23T12:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://scofieldfee.github.io/claude-introduce/#features</loc>
+    <lastmod>2025-05-23T12:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://scofieldfee.github.io/claude-introduce/#claude-code</loc>
+    <lastmod>2025-05-23T12:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://scofieldfee.github.io/claude-introduce/#pricing</loc>
+    <lastmod>2025-05-23T12:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://scofieldfee.github.io/claude-introduce/#guide</loc>
+    <lastmod>2025-05-23T12:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 资源文件 -->
+  <url>
+    <loc>https://scofieldfee.github.io/claude-introduce/assets/css/custom.css</loc>
+    <lastmod>2025-05-23T08:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://scofieldfee.github.io/claude-introduce/assets/js/script.js</loc>
+    <lastmod>2025-05-23T08:00:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://scofieldfee.github.io/claude-introduce/manifest.json</loc>
+    <lastmod>2025-05-23T08:00:00+08:00</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+
+</urlset> 

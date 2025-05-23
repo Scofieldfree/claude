@@ -3,363 +3,1213 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Claude 4 深度解析 - 原型展示</title>
-    <meta name="description" content="Claude 4 AI编程助手深度解析网站原型，采用Spotify风格设计" />
+    
+    <!-- Basic SEO Meta Tags -->
+    <title>Claude 4 横空出世：AI 编程新王者如何重塑开发生态 | 2025最新深度技术解析</title>
+    <meta name="description" content="Claude 4 深度技术解析：从性能测试到实战指南，全面解读AI编程助手的革命性升级。包含SWE-bench测试结果、Claude Code发布详情、定价策略及企业实战案例。" />
+    <meta name="keywords" content="Claude 4, AI编程, Claude Code, 人工智能, 编程工具, 技术评测, Anthropic, SWE-bench, AI助手, 软件开发, 代码生成, 程序员工具" />
+    <meta name="author" content="scofieldfee" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://scofieldfee.github.io/claude-introduce/" />
+    
+    <!-- Language and Geographic Targeting -->
+    <meta name="language" content="zh-CN" />
+    <meta name="geo.region" content="CN" />
+    <meta name="geo.placename" content="China" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://scofieldfee.github.io/claude-introduce/" />
+    <meta property="og:title" content="Claude 4 横空出世：AI 编程新王者如何重塑开发生态" />
+    <meta property="og:description" content="Claude 4 深度技术解析：从性能测试到实战指南，全面解读AI编程助手的革命性升级。包含SWE-bench测试结果、Claude Code发布详情、定价策略及企业实战案例。" />
+    <meta property="og:image" content="https://scofieldfee.github.io/claude-introduce/assets/images/claude-4-og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Claude 4 AI编程助手深度解析 - 性能测试与实战指南" />
+    <meta property="og:site_name" content="Claude 4 深度解析" />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="article:author" content="scofieldfee" />
+    <meta property="article:published_time" content="2025-05-23T08:00:00+08:00" />
+    <meta property="article:modified_time" content="2025-05-23T12:00:00+08:00" />
+    <meta property="article:section" content="AI技术" />
+    <meta property="article:tag" content="Claude 4" />
+    <meta property="article:tag" content="AI编程" />
+    <meta property="article:tag" content="Claude Code" />
+    <meta property="article:tag" content="人工智能" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://scofieldfee.github.io/claude-introduce/" />
+    <meta name="twitter:title" content="Claude 4 横空出世：AI 编程新王者如何重塑开发生态" />
+    <meta name="twitter:description" content="Claude 4 深度技术解析：从性能测试到实战指南，全面解读AI编程助手的革命性升级。包含SWE-bench测试结果、Claude Code发布详情。" />
+    <meta name="twitter:image" content="https://scofieldfee.github.io/claude-introduce/assets/images/claude-4-twitter-card.jpg" />
+    <meta name="twitter:image:alt" content="Claude 4 AI编程助手深度解析" />
+    <meta name="twitter:site" content="@scofieldfee" />
+    <meta name="twitter:creator" content="@scofieldfee" />
+    
+    <!-- Additional SEO Tags -->
+    <meta name="theme-color" content="#1DB954" />
+    <meta name="msapplication-TileColor" content="#1DB954" />
+    <meta name="application-name" content="Claude 4 深度解析" />
+    <meta name="apple-mobile-web-app-title" content="Claude 4 解析" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    
+    <!-- Preconnect to External Domains -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" />
+    <link rel="preconnect" href="https://unpkg.com" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link rel="preconnect" href="https://api.iconify.design" />
+    
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//www.google-analytics.com" />
+    
+    <!-- Favicon and Icons -->
+    <link rel="icon" type="image/svg+xml" href="https://api.iconify.design/heroicons/sparkles.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png" />
+    <link rel="manifest" href="manifest.json" />
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Claude 4 横空出世：AI 编程新王者如何重塑开发生态",
+      "description": "Claude 4 深度技术解析：从性能测试到实战指南，全面解读AI编程助手的革命性升级。包含SWE-bench测试结果、Claude Code发布详情、定价策略及企业实战案例。",
+      "image": [
+        "https://scofieldfee.github.io/claude-introduce/assets/images/claude-4-hero.jpg",
+        "https://scofieldfee.github.io/claude-introduce/assets/images/claude-4-performance.jpg",
+        "https://scofieldfee.github.io/claude-introduce/assets/images/claude-code-screenshot.jpg"
+      ],
+      "datePublished": "2025-05-23T08:00:00+08:00",
+      "dateModified": "2025-05-23T12:00:00+08:00",
+      "author": {
+        "@type": "Person",
+        "name": "scofieldfee",
+        "url": "https://twitter.com/scofieldfee",
+        "sameAs": [
+          "https://twitter.com/scofieldfee",
+          "https://github.com/scofieldfee"
+        ]
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Claude 4 深度解析",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://scofieldfee.github.io/claude-introduce/assets/images/logo.png"
+        }
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://scofieldfee.github.io/claude-introduce/"
+      },
+      "articleSection": "AI技术",
+      "keywords": "Claude 4, AI编程, Claude Code, 人工智能, 编程工具, 技术评测, Anthropic, SWE-bench",
+      "wordCount": 8000,
+      "timeRequired": "PT15M",
+      "inLanguage": "zh-CN",
+      "about": [
+        {
+          "@type": "Thing",
+          "name": "Claude 4",
+          "description": "Anthropic公司最新发布的AI编程助手"
+        },
+        {
+          "@type": "Thing",
+          "name": "AI编程",
+          "description": "人工智能辅助软件开发"
+        },
+        {
+          "@type": "Thing",
+          "name": "Claude Code",
+          "description": "Claude 4的IDE集成工具"
+        }
+      ],
+      "mentions": [
+        {
+          "@type": "Organization",
+          "name": "Anthropic",
+          "url": "https://www.anthropic.com"
+        },
+        {
+          "@type": "Organization",
+          "name": "GitHub",
+          "url": "https://github.com"
+        },
+        {
+          "@type": "Organization",
+          "name": "OpenAI",
+          "url": "https://openai.com"
+        },
+        {
+          "@type": "Organization",
+          "name": "Google",
+          "url": "https://google.com"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- CSS and JS Resources -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="assets/css/custom.css" />
-    <link rel="icon" type="image/svg+xml" href="https://api.iconify.design/heroicons/sparkles.svg" />
+    
     <script>
       tailwind.config = {
         theme: {
           extend: {
             colors: {
-              "spotify-green": "#1DB954",
-              "spotify-dark": "#121212",
-              "spotify-gray": "#191414",
-              "spotify-light-gray": "#282828",
+              'spotify-green': '#1DB954',
+              'spotify-dark': '#121212',
+              'spotify-gray': '#191414',
+              'spotify-light-gray': '#282828',
             },
             fontFamily: {
-              spotify: ["Circular", "Helvetica", "Arial", "sans-serif"],
-            },
-          },
-        },
-      };
+              'spotify': ['Circular', 'Helvetica', 'Arial', 'sans-serif'],
+            }
+          }
+        }
+      }
     </script>
   </head>
-  <body class="bg-spotify-dark text-white antialiased overflow-x-hidden" x-data="prototypeApp()">
-    <!-- Header -->
-    <header class="relative z-50 bg-gradient-to-r from-spotify-green via-emerald-500 to-cyan-500 p-6">
-      <div class="max-w-7xl mx-auto">
+  <body class="bg-spotify-dark text-white antialiased" x-data="articleApp()">
+    <!-- Navigation Header -->
+    <nav class="sticky top-0 z-50 bg-spotify-gray/95 backdrop-blur-sm border-b border-gray-700">
+      <div class="max-w-6xl mx-auto px-6 py-4">
         <div class="flex items-center justify-between">
           <div class="flex items-center space-x-4">
-            <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center">
-              <svg class="w-8 h-8 text-spotify-green" fill="currentColor" viewBox="0 0 24 24">
-                <path
-                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
-                />
-              </svg>
-            </div>
-            <div>
-              <h1 class="text-2xl font-bold">Claude 4 深度解析</h1>
-              <p class="text-sm opacity-90">AI 编程新王者原型展示</p>
-            </div>
+            <a href="index.html" class="flex items-center space-x-2 hover:opacity-80 transition-opacity">
+              <div class="w-8 h-8 bg-gradient-to-br from-spotify-green to-emerald-500 rounded-lg flex items-center justify-center">
+                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </div>
+              <span class="font-semibold text-white">Claude 4 解析</span>
+            </a>
           </div>
-          <div class="flex items-center space-x-4">
-            <button @click="toggleTheme()" class="p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors">
-              <svg x-show="isDark" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path
-                  d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z"
-                />
-              </svg>
-              <svg x-show="!isDark" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path
-                  d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z"
-                />
+          
+          <!-- Article Navigation -->
+          <div class="hidden md:flex items-center space-x-6">
+            <a href="#performance" class="text-gray-300 hover:text-spotify-green text-sm transition-colors">性能测试</a>
+            <a href="#features" class="text-gray-300 hover:text-spotify-green text-sm transition-colors">核心功能</a>
+            <a href="#claude-code" class="text-gray-300 hover:text-spotify-green text-sm transition-colors">Claude Code</a>
+            <a href="#pricing" class="text-gray-300 hover:text-spotify-green text-sm transition-colors">定价策略</a>
+            <a href="#guide" class="text-gray-300 hover:text-spotify-green text-sm transition-colors">实战指南</a>
+          </div>
+          
+          <div class="flex items-center space-x-3">
+            <button @click="toggleTheme()" class="p-2 rounded-lg bg-spotify-light-gray hover:bg-gray-600 transition-colors">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0z"/>
               </svg>
             </button>
-            <div class="text-right">
-              <div class="text-sm font-medium">原型状态</div>
-              <div class="text-xs opacity-75">✅ 已完成</div>
+            <button class="p-2 rounded-lg bg-spotify-light-gray hover:bg-gray-600 transition-colors">
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M7.217 10.907a2.25 2.25 0 100 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186l9.566-5.314m-9.566 7.5l9.566 5.314m0 0a2.25 2.25 0 103.935 2.186 2.25 2.25 0 00-3.935-2.186zm0-12.814a2.25 2.25 0 103.933-2.185 2.25 2.25 0 00-3.933 2.185z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-br from-spotify-green via-emerald-500 to-cyan-500"></div>
+      <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.1"%3E%3Ccircle cx="30" cy="30" r="4"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-20"></div>
+      
+      <div class="relative max-w-6xl mx-auto px-6 py-20">
+        <div class="text-center">
+          <!-- Status Badge -->
+          <div class="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium mb-6">
+            <div class="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></div>
+            刚刚发布 • 2025年5月22日
+          </div>
+          
+          <!-- Main Title -->
+          <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+            Claude 4 横空出世
+            <span class="block text-3xl md:text-5xl bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent">
+              AI 编程新王者如何重塑开发生态
+            </span>
+          </h1>
+          
+          <!-- Subtitle -->
+          <p class="text-xl md:text-2xl text-white/90 mb-8 max-w-4xl mx-auto leading-relaxed">
+            当 Google 还在为 Gemini 2.5 Pro 的发布沾沾自喜时，Anthropic 悄然投下了一枚重磅炸弹——Claude 4 系列模型的发布，彻底改变了 AI 编程助手的竞争格局。
+          </p>
+          
+          <!-- Call to Action -->
+          <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <button @click="scrollToContent()" class="bg-white text-gray-900 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors flex items-center space-x-2">
+              <span>开始阅读</span>
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/>
+              </svg>
+            </button>
+            <div class="text-white/80 text-sm">
+              📖 约 15 分钟阅读 • 🔥 深度技术解析
             </div>
           </div>
         </div>
+      </div>
+      
+      <!-- Scroll Indicator -->
+      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <svg class="w-6 h-6 text-white/60" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 16l-6-6h12l-6 6z"/>
+        </svg>
       </div>
     </header>
 
-    <!-- Search and Filter Bar -->
-    <div class="bg-spotify-gray border-b border-gray-700 p-4">
-      <div class="max-w-7xl mx-auto">
-        <div class="flex flex-col md:flex-row gap-4 items-center justify-between">
-          <div class="flex-1 max-w-md">
-            <div class="relative">
-              <input
-                type="text"
-                placeholder="搜索页面..."
-                class="w-full bg-spotify-light-gray border border-gray-600 rounded-full px-4 py-2 pl-10 text-white placeholder-gray-400 focus:outline-none focus:border-spotify-green transition-colors"
-                x-model="searchQuery"
-              />
-              <svg class="absolute left-3 top-2.5 w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-              </svg>
-            </div>
-          </div>
-          <div class="flex gap-2">
-            <select
-              class="bg-spotify-light-gray border border-gray-600 rounded-lg px-3 py-2 text-white text-sm focus:outline-none focus:border-spotify-green"
-            >
-              <option>所有页面</option>
-              <option>主要页面</option>
-              <option>功能页面</option>
-            </select>
-            <button
-              @click="viewMode = viewMode === 'grid' ? 'list' : 'grid'"
-              class="p-2 bg-spotify-light-gray border border-gray-600 rounded-lg hover:bg-gray-600 transition-colors"
-            >
-              <svg x-show="viewMode === 'grid'" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path
-                  d="M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM3.75 12h.007v.008H3.75V12zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zM3.75 17.25h.007v.008H3.75v-.008zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
-                />
-              </svg>
-              <svg x-show="viewMode === 'list'" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path
-                  d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Main Content -->
-    <main class="max-w-7xl mx-auto p-6">
-      <!-- Stats Overview -->
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-        <div class="bg-gradient-to-br from-spotify-green to-emerald-600 rounded-xl p-6 text-white">
-          <div class="flex items-center justify-between">
-            <div>
-              <div class="text-2xl font-bold">1</div>
-              <div class="text-sm opacity-90">主页面</div>
-            </div>
-            <svg class="w-8 h-8 opacity-80" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-            </svg>
-          </div>
-        </div>
-
-        <div class="bg-gradient-to-br from-purple-500 to-pink-600 rounded-xl p-6 text-white">
-          <div class="flex items-center justify-between">
-            <div>
-              <div class="text-2xl font-bold">8</div>
-              <div class="text-sm opacity-90">功能模块</div>
-            </div>
-            <svg class="w-8 h-8 opacity-80" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 00-3.7-3.7 48.678 48.678 0 00-7.324 0 4.006 4.006 0 00-3.7 3.7c-.017.22-.032.441-.046.662M19.5 12l3-3m-3 3l-3-3m-12 3c0 1.232.046 2.453.138 3.662a4.006 4.006 0 003.7 3.7 48.656 48.656 0 007.324 0 4.006 4.006 0 003.7-3.7c.017-.22.032-.441.046-.662M4.5 12l3 3m-3-3l3-3"
-              />
-            </svg>
-          </div>
-        </div>
-
-        <div class="bg-gradient-to-br from-blue-500 to-cyan-600 rounded-xl p-6 text-white">
-          <div class="flex items-center justify-between">
-            <div>
-              <div class="text-2xl font-bold">100%</div>
-              <div class="text-sm opacity-90">响应式支持</div>
-            </div>
-            <svg class="w-8 h-8 opacity-80" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M10.5 1.875a1.125 1.125 0 012.25 0v8.219c.517.162 1.02.382 1.5.659V3.375a1.125 1.125 0 112.25 0v4.828c.312-.209.641-.398.981-.564a1.125 1.125 0 011.688.981v8.25a6 6 0 01-12 0V9.375c0-.621.504-1.125 1.125-1.125z"
-              />
-            </svg>
-          </div>
-        </div>
-
-        <div class="bg-gradient-to-br from-amber-500 to-orange-600 rounded-xl p-6 text-white">
-          <div class="flex items-center justify-between">
-            <div>
-              <div class="text-2xl font-bold">A+</div>
-              <div class="text-sm opacity-90">设计质量</div>
-            </div>
-            <svg class="w-8 h-8 opacity-80" fill="currentColor" viewBox="0 0 24 24">
-              <path
-                d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z"
-              />
-            </svg>
-          </div>
-        </div>
-      </div>
-
-      <!-- Page Preview Grid -->
-      <div x-show="viewMode === 'grid'" class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8" x-transition>
-        <!-- Main Article Page -->
-        <div
-          class="group relative bg-spotify-light-gray rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-spotify-green/20 transition-all duration-500 hover:-translate-y-2"
-        >
-          <div
-            class="absolute inset-0 bg-gradient-to-br from-spotify-green/20 via-transparent to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-          ></div>
-          <div class="relative">
-            <div
-              class="aspect-video bg-gradient-to-br from-spotify-green to-purple-600 p-6 flex items-center justify-center"
-            >
-              <iframe
-                src="pages/article.html"
-                class="w-full h-full rounded-lg scale-75 origin-top-left pointer-events-none"
-                style="width: 133.33%; height: 133.33%"
-              ></iframe>
-            </div>
-            <div
-              class="absolute inset-0 bg-gradient-to-br from-spotify-green/10 to-purple-500/10 group-hover:opacity-0 transition-opacity"
-            ></div>
-          </div>
-          <div class="relative p-6">
-            <div class="flex items-center justify-between mb-3">
-              <span
-                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-spotify-green text-white"
-              >
-                主页面
-              </span>
-              <div class="flex space-x-1">
-                <div class="w-2 h-2 bg-green-400 rounded-full"></div>
-                <div class="w-2 h-2 bg-green-400 rounded-full"></div>
-                <div class="w-2 h-2 bg-green-400 rounded-full"></div>
-              </div>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-spotify-green transition-colors">
-              Claude 4 深度解析文章
-            </h3>
-            <p class="text-gray-400 text-sm mb-4 leading-relaxed">
-              完整的Claude 4技术分析文章，包含性能测试、功能特性、定价策略等核心内容
-            </p>
-            <div class="flex flex-wrap gap-2 mb-4">
-              <span class="px-2 py-1 bg-spotify-green/20 text-spotify-green text-xs rounded-full">AI技术</span>
-              <span class="px-2 py-1 bg-purple-500/20 text-purple-400 text-xs rounded-full">编程工具</span>
-              <span class="px-2 py-1 bg-blue-500/20 text-blue-400 text-xs rounded-full">技术评测</span>
-            </div>
-            <div class="flex gap-3">
-              <a
-                href="pages/article.html"
-                target="_blank"
-                class="flex-1 bg-gradient-to-r from-spotify-green to-emerald-500 text-white px-4 py-2 rounded-lg text-sm font-medium hover:shadow-lg hover:shadow-spotify-green/25 transition-all duration-300 text-center"
-              >
-                📖 阅读文章
-              </a>
-              <button
-                @click="previewMobile('pages/article.html')"
-                class="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg text-sm transition-colors"
-              >
-                📱
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Coming Soon Placeholders -->
-        <template x-for="i in 5" :key="i">
-          <div
-            class="group relative bg-spotify-light-gray/50 rounded-xl overflow-hidden border-2 border-dashed border-gray-600"
-          >
-            <div class="aspect-video bg-gradient-to-br from-gray-700 to-gray-800 flex items-center justify-center">
-              <div class="text-center">
-                <svg class="w-16 h-16 text-gray-500 mx-auto mb-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path
-                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
-                  />
-                </svg>
-                <div class="text-gray-400 text-sm">即将推出</div>
-              </div>
-            </div>
-            <div class="p-6">
-              <div class="flex items-center justify-between mb-3">
-                <span
-                  class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-600 text-gray-300"
-                >
-                  规划中
-                </span>
-              </div>
-              <h3 class="text-lg font-semibold text-gray-400 mb-2">扩展页面</h3>
-              <p class="text-gray-500 text-sm mb-4">更多功能页面正在开发中...</p>
-              <button disabled class="w-full bg-gray-700 text-gray-500 px-4 py-2 rounded-lg text-sm cursor-not-allowed">
-                敬请期待
-              </button>
-            </div>
-          </div>
-        </template>
-      </div>
-
-      <!-- List View -->
-      <div x-show="viewMode === 'list'" class="space-y-4" x-transition>
-        <div class="bg-spotify-light-gray rounded-xl p-6 hover:bg-gray-700 transition-colors">
-          <div class="flex items-center justify-between">
-            <div class="flex items-center space-x-4">
-              <div
-                class="w-16 h-16 bg-gradient-to-br from-spotify-green to-purple-600 rounded-lg flex items-center justify-center"
-              >
-                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path
-                    d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
-                  />
-                </svg>
-              </div>
-              <div>
-                <h3 class="text-lg font-bold text-white">Claude 4 深度解析文章</h3>
-                <p class="text-gray-400 text-sm">完整的技术分析文章页面</p>
-                <div class="flex space-x-2 mt-1">
-                  <span class="px-2 py-0.5 bg-spotify-green text-white text-xs rounded">已完成</span>
-                  <span class="px-2 py-0.5 bg-blue-500 text-white text-xs rounded">响应式</span>
-                </div>
-              </div>
-            </div>
-            <div class="flex items-center space-x-3">
-              <a href="pages/article.html" target="_blank" class="text-spotify-green hover:underline text-sm">
-                在新窗口打开
-              </a>
-              <button @click="previewMobile('pages/article.html')" class="text-blue-400 hover:underline text-sm">
-                移动端预览
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
-
-    <!-- Mobile Preview Modal -->
-    <div
-      x-show="showMobilePreview"
-      class="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
-      x-transition
-    >
-      <div class="bg-spotify-light-gray rounded-xl p-6 max-w-sm w-full">
-        <div class="flex items-center justify-between mb-4">
-          <h3 class="text-lg font-bold text-white">移动端预览</h3>
-          <button @click="showMobilePreview = false" class="text-gray-400 hover:text-white">
-            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M6 18L18 6M6 6l12 12" />
+    <!-- Table of Contents -->
+    <div class="bg-spotify-gray border-b border-gray-700">
+      <div class="max-w-6xl mx-auto px-6 py-6">
+        <div class="flex items-center justify-between">
+          <h2 class="text-lg font-semibold text-white">文章导览</h2>
+          <button @click="showToc = !showToc" class="md:hidden text-spotify-green">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
             </svg>
           </button>
         </div>
-        <div class="bg-black rounded-lg p-2">
-          <iframe :src="mobilePreviewUrl" class="w-full h-96 rounded"></iframe>
+        <div x-show="showToc || window.innerWidth >= 768" class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+          <div class="space-y-2">
+            <a href="#performance" class="block text-gray-300 hover:text-spotify-green transition-colors">⚡ 性能王者：用数据说话</a>
+            <a href="#features" class="block text-gray-300 hover:text-spotify-green transition-colors">🛠️ 五大核心功能</a>
+            <a href="#claude-code" class="block text-gray-300 hover:text-spotify-green transition-colors">🚀 Claude Code 正式发布</a>
+          </div>
+          <div class="space-y-2">
+            <a href="#api" class="block text-gray-300 hover:text-spotify-green transition-colors">🔧 API 新功能</a>
+            <a href="#reasoning" class="block text-gray-300 hover:text-spotify-green transition-colors">⚡ 混合推理模式</a>
+            <a href="#pricing" class="block text-gray-300 hover:text-spotify-green transition-colors">💰 定价策略</a>
+          </div>
+          <div class="space-y-2">
+            <a href="#guide" class="block text-gray-300 hover:text-spotify-green transition-colors">🔧 实战指南</a>
+            <a href="#security" class="block text-gray-300 hover:text-spotify-green transition-colors">🛡️ 安全性与可靠性</a>
+            <a href="#impact" class="block text-gray-300 hover:text-spotify-green transition-colors">🌟 生态影响</a>
+          </div>
         </div>
       </div>
     </div>
 
+    <!-- Main Article Content -->
+    <main class="max-w-4xl mx-auto px-6 py-12">
+      <!-- Competition Context -->
+      <section class="mb-16">
+        <div class="bg-gradient-to-r from-spotify-light-gray to-gray-800 rounded-2xl p-8 mb-8">
+          <h2 class="text-3xl font-bold mb-6 bg-gradient-to-r from-spotify-green to-emerald-400 bg-clip-text text-transparent">
+            🚀 AI 巨头博弈：Claude 4 的时机选择
+          </h2>
+          <div class="prose prose-lg prose-invert max-w-none">
+            <p class="text-gray-300 leading-relaxed mb-6">
+              就在 Google I/O 大会结束仅 24 小时后，Anthropic 选择在这个时间点发布 Claude Sonnet 4 和 Claude Opus 4，这绝非偶然。当整个科技圈还在讨论 Gemini 2.5 Pro 和 Veo3 的突破时，Claude 4 的登场瞬间抢夺了聚光灯。
+            </p>
+            <p class="text-gray-300 leading-relaxed">
+              这场"截胡大战"背后，反映的是 AI 大模型竞争进入白热化阶段的现实。OpenAI 的 GPT-4 虽然依旧强劲，但创新节奏明显放缓；Google 的 Gemini 系列技术实力不俗，却在实用性和稳定性上存在短板。而 Anthropic，这个专注于 AI 安全和实用性的公司，正是在这个关键时刻推出了可能改变游戏规则的产品。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Performance Section -->
+      <section id="performance" class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+          💪 性能王者：用数据说话的技术实力
+        </h2>
+        
+        <!-- SWE-bench Results -->
+        <div class="bg-spotify-light-gray rounded-2xl p-8 mb-8">
+          <h3 class="text-2xl font-semibold mb-6 text-white">SWE-bench 测试：史无前例的双模型领先</h3>
+          
+          <!-- Performance Chart -->
+          <div class="bg-spotify-gray rounded-xl p-6 mb-6">
+            <canvas id="performanceChart" width="400" height="300" style="height: 300px;"></canvas>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div class="bg-gradient-to-br from-spotify-green/20 to-emerald-500/20 rounded-xl p-6 border border-spotify-green/30">
+              <div class="flex items-center justify-between mb-4">
+                <h4 class="text-lg font-semibold text-white">Claude Opus 4</h4>
+                <div class="w-12 h-12 bg-spotify-green rounded-full flex items-center justify-center">
+                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="text-4xl font-bold text-spotify-green mb-2">72.5%</div>
+              <p class="text-gray-300 text-sm">SWE-bench 软件工程基准测试成绩</p>
+            </div>
+            
+            <div class="bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-xl p-6 border border-purple-500/30">
+              <div class="flex items-center justify-between mb-4">
+                <h4 class="text-lg font-semibold text-white">Claude Sonnet 4</h4>
+                <div class="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center">
+                  <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                  </svg>
+                </div>
+              </div>
+              <div class="text-4xl font-bold text-purple-400 mb-2">72.7%</div>
+              <p class="text-gray-300 text-sm">超越 Opus 4，编程任务专项优化</p>
+            </div>
+          </div>
+          
+          <div class="bg-spotify-gray rounded-xl p-6">
+            <h4 class="text-lg font-semibold text-white mb-4">突破意义</h4>
+            <ul class="space-y-3 text-gray-300">
+              <li class="flex items-start space-x-3">
+                <div class="w-2 h-2 bg-spotify-green rounded-full mt-2 flex-shrink-0"></div>
+                <span>相比当前最佳的竞争对手，领先优势显著</span>
+              </li>
+              <li class="flex items-start space-x-3">
+                <div class="w-2 h-2 bg-spotify-green rounded-full mt-2 flex-shrink-0"></div>
+                <span>Claude 4 系列已经达到了实用级别的软件工程能力</span>
+              </li>
+              <li class="flex items-start space-x-3">
+                <div class="w-2 h-2 bg-spotify-green rounded-full mt-2 flex-shrink-0"></div>
+                <span>Sonnet 4 在编程任务上的表现甚至超越了更大的 Opus 4 模型</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Terminal-bench Results -->
+        <div class="bg-spotify-light-gray rounded-2xl p-8">
+          <h3 class="text-2xl font-semibold mb-6 text-white">Terminal-bench：系统级操作的新标杆</h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-spotify-gray rounded-xl p-6">
+              <div class="text-3xl font-bold text-blue-400 mb-2">43.2%</div>
+              <p class="text-gray-300 text-sm">Claude Opus 4 Terminal-bench 成绩</p>
+            </div>
+            <div class="bg-spotify-gray rounded-xl p-6">
+              <div class="text-3xl font-bold text-emerald-400 mb-2">系统级</div>
+              <p class="text-gray-300 text-sm">命令执行和自动化任务能力</p>
+            </div>
+            <div class="bg-spotify-gray rounded-xl p-6">
+              <div class="text-3xl font-bold text-purple-400 mb-2">AI Agent</div>
+              <p class="text-gray-300 text-sm">实用性的重要衡量指标</p>
+            </div>
+          </div>
+          
+          <!-- Code Example -->
+          <div class="mt-6 bg-spotify-dark rounded-xl p-6 border border-gray-600">
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-sm text-gray-400">Claude 4 能够理解并执行的复杂任务示例</span>
+              <button class="text-spotify-green text-sm hover:underline">复制代码</button>
+            </div>
+            <pre class="text-sm text-gray-300 overflow-x-auto"><code>$ find . -name "*.py" -exec grep -l "deprecated" {} \; | \
+  xargs sed -i 's/deprecated_function/new_function/g'</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- Core Features Section -->
+      <section id="features" class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+          🛠️ 五大核心功能：专为现代开发而生
+        </h2>
+        
+        <div class="space-y-8">
+          <!-- Feature 1: Extended Thinking -->
+          <div class="bg-gradient-to-r from-spotify-light-gray to-gray-800 rounded-2xl p-8">
+            <div class="flex items-start space-x-4 mb-6">
+              <div class="w-12 h-12 bg-gradient-to-br from-spotify-green to-emerald-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-2xl font-semibold text-white mb-2">1. 扩展思维与工具使用</h3>
+                <p class="text-gray-300">最具革新性的功能：两个模型都可以在扩展思维期间使用工具</p>
+              </div>
+            </div>
+            
+            <div class="bg-spotify-dark rounded-xl p-6 mb-6">
+              <h4 class="text-lg font-semibold text-white mb-4">工作流程示例</h4>
+              <div class="space-y-4">
+                <div class="flex items-start space-x-3">
+                  <div class="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0 text-xs text-white font-bold">1</div>
+                  <div>
+                    <div class="text-white font-medium">思考：我需要获取React 19的最新信息</div>
+                    <div class="text-gray-400 text-sm">分析用户需求，确定所需信息</div>
+                  </div>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <div class="w-6 h-6 bg-spotify-green rounded-full flex items-center justify-center flex-shrink-0 text-xs text-white font-bold">2</div>
+                  <div>
+                    <div class="text-white font-medium">执行：使用网络搜索查找React 19发布信息</div>
+                    <div class="text-gray-400 text-sm">调用搜索工具获取实时数据</div>
+                  </div>
+                </div>
+                <div class="flex items-start space-x-3">
+                  <div class="w-6 h-6 bg-purple-500 rounded-full flex items-center justify-center flex-shrink-0 text-xs text-white font-bold">3</div>
+                  <div>
+                    <div class="text-white font-medium">思考：基于这些信息，分析升级的影响</div>
+                    <div class="text-gray-400 text-sm">深度分析和推理过程</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Feature 2: Parallel Tool Execution -->
+          <div class="bg-gradient-to-r from-purple-900/50 to-pink-900/50 rounded-2xl p-8">
+            <div class="flex items-start space-x-4 mb-6">
+              <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 00-3.7-3.7 48.678 48.678 0 00-7.324 0 4.006 4.006 0 00-3.7 3.7c-.017.22-.032.441-.046.662M19.5 12l3-3m-3 3l-3-3m-12 3c0 1.232.046 2.453.138 3.662a4.006 4.006 0 003.7 3.7 48.656 48.656 0 007.324 0 4.006 4.006 0 003.7-3.7c.017-.22.032-.441.046-.662M4.5 12l3 3m-3-3l3-3"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-2xl font-semibold text-white mb-2">2. 并行工具执行：多任务处理的革命</h3>
+                <p class="text-gray-300">两个模型都可以并行使用工具，大幅提升处理复杂任务的效率</p>
+              </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div class="bg-spotify-dark rounded-xl p-4">
+                <div class="text-purple-400 font-semibold mb-2">同时运行多个测试套件</div>
+                <div class="text-gray-400 text-sm">并行执行单元测试、集成测试、端到端测试</div>
+              </div>
+              <div class="bg-spotify-dark rounded-xl p-4">
+                <div class="text-purple-400 font-semibold mb-2">并行分析多个代码文件</div>
+                <div class="text-gray-400 text-sm">同时检查语法、性能、安全性问题</div>
+              </div>
+              <div class="bg-spotify-dark rounded-xl p-4">
+                <div class="text-purple-400 font-semibold mb-2">同步执行代码检查和文档生成</div>
+                <div class="text-gray-400 text-sm">提升开发流程整体效率</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Feature 3: Enhanced Memory -->
+          <div class="bg-gradient-to-r from-blue-900/50 to-cyan-900/50 rounded-2xl p-8">
+            <div class="flex items-start space-x-4 mb-6">
+              <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125"/>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-2xl font-semibold text-white mb-2">3. 增强的记忆能力：从工具到合作伙伴</h3>
+                <p class="text-gray-300">Opus 4 在创建和维护"记忆文件"方面表现出色，能够存储关键信息</p>
+              </div>
+            </div>
+            
+            <div class="bg-spotify-dark rounded-xl p-6">
+              <h4 class="text-lg font-semibold text-white mb-4">实际应用示例</h4>
+              <div class="bg-gray-800 rounded-lg p-4 mb-4">
+                <div class="text-cyan-400 text-sm mb-2">宝可梦游戏导航指南 - memory_file.md</div>
+                <div class="text-gray-300 text-sm font-mono">
+                  # 游戏进度记录<br/>
+                  - 当前位置：常青森林<br/>
+                  - 已捕获宝可梦：皮卡丘、小火龙<br/>
+                  - 下一个目标：华蓝道馆<br/>
+                  - 重要道具：精灵球 x5, 伤药 x3
+                </div>
+              </div>
+              <p class="text-gray-400 text-sm">
+                这个例子展示了 Opus 4 如何在长期任务中维护上下文信息，为用户提供持续的帮助。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Claude Code Section -->
+      <section id="claude-code" class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 bg-gradient-to-r from-green-400 to-blue-500 bg-clip-text text-transparent">
+          🚀 Claude Code 正式发布：IDE 集成的新纪元
+        </h2>
+        
+        <div class="bg-gradient-to-br from-spotify-light-gray to-gray-800 rounded-2xl p-8 mb-8">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div>
+              <h3 class="text-2xl font-semibold text-white mb-6">从预览到正式版的重大升级</h3>
+              <p class="text-gray-300 leading-relaxed mb-6">
+                经过大量正面反馈的研究预览后，Claude Code 现在正式可用。这标志着 AI 编程助手从独立工具向开发流程深度集成的重要转变。
+              </p>
+              
+              <div class="space-y-4">
+                <div class="flex items-center space-x-3">
+                  <div class="w-8 h-8 bg-spotify-green rounded-lg flex items-center justify-center">
+                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                  </div>
+                  <span class="text-white">VS Code 和 JetBrains 的 Beta 扩展</span>
+                </div>
+                <div class="flex items-center space-x-3">
+                  <div class="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
+                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                  </div>
+                  <span class="text-white">内联编辑界面</span>
+                </div>
+                <div class="flex items-center space-x-3">
+                  <div class="w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center">
+                    <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                    </svg>
+                  </div>
+                  <span class="text-white">GitHub Actions 集成</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="bg-spotify-dark rounded-xl p-6">
+              <h4 class="text-lg font-semibold text-white mb-4">Claude Code SDK 示例</h4>
+              <div class="bg-gray-900 rounded-lg p-4 text-sm">
+                <div class="text-gray-500 mb-2"># Claude Code SDK示例</div>
+                <div class="text-blue-400">from</div> <div class="text-white">claude_code</div> <div class="text-blue-400">import</div> <div class="text-white">ClaudeAgent</div><br/><br/>
+                <div class="text-gray-500"># 构建自定义代理和应用</div><br/>
+                <div class="text-white">agent = ClaudeAgent()</div><br/>
+                <div class="text-white">result = agent.analyze_codebase(</div><div class="text-green-400">"./src"</div><div class="text-white">)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- GitHub Integration -->
+        <div class="bg-spotify-light-gray rounded-2xl p-8">
+          <h3 class="text-2xl font-semibold text-white mb-6">GitHub 集成：协作开发的新模式</h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-spotify-dark rounded-xl p-6 text-center">
+              <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                </svg>
+              </div>
+              <h4 class="text-lg font-semibold text-white mb-2">PR 自动响应</h4>
+              <p class="text-gray-400 text-sm">在 Pull Request 中标记 Claude Code 来响应审查者反馈</p>
+            </div>
+            
+            <div class="bg-spotify-dark rounded-xl p-6 text-center">
+              <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+              </div>
+              <h4 class="text-lg font-semibold text-white mb-2">CI 错误修复</h4>
+              <p class="text-gray-400 text-sm">自动修复持续集成错误</p>
+            </div>
+            
+            <div class="bg-spotify-dark rounded-xl p-6 text-center">
+              <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/>
+                </svg>
+              </div>
+              <h4 class="text-lg font-semibold text-white mb-2">代码修改建议</h4>
+              <p class="text-gray-400 text-sm">智能化的代码改进建议</p>
+            </div>
+          </div>
+          
+          <div class="mt-6 bg-spotify-dark rounded-xl p-4">
+            <div class="text-center">
+              <span class="text-gray-400 text-sm">安装方式：在 Claude Code 中运行</span>
+              <code class="mx-2 px-3 py-1 bg-gray-800 rounded text-spotify-green text-sm font-mono">/install-github-app</code>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pricing Section -->
+      <section id="pricing" class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
+          💰 定价策略：性能提升，价格不变
+        </h2>
+        
+        <div class="bg-spotify-light-gray rounded-2xl p-8">
+          <p class="text-gray-300 text-lg mb-8 text-center">
+            在性能大幅提升的情况下，Claude 4 系列保持了与上一代相同的定价
+          </p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <!-- Sonnet 4 Pricing -->
+            <div class="bg-gradient-to-br from-spotify-green/20 to-emerald-500/20 rounded-xl p-8 border border-spotify-green/30">
+              <div class="text-center mb-6">
+                <h3 class="text-2xl font-bold text-white mb-2">Claude Sonnet 4</h3>
+                <p class="text-gray-300 text-sm">日常开发、代码生成</p>
+              </div>
+              
+              <div class="space-y-4 mb-6">
+                <div class="flex justify-between items-center">
+                  <span class="text-gray-300">输入价格</span>
+                  <span class="text-spotify-green font-semibold">$3/百万 token</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-gray-300">输出价格</span>
+                  <span class="text-spotify-green font-semibold">$15/百万 token</span>
+                </div>
+              </div>
+              
+              <div class="bg-spotify-dark rounded-lg p-4">
+                <h4 class="text-white font-semibold mb-2">适用场景</h4>
+                <ul class="text-gray-300 text-sm space-y-1">
+                  <li>• 日常编程问题解决</li>
+                  <li>• 代码生成与优化</li>
+                  <li>• API 文档编写</li>
+                  <li>• 代码审查协助</li>
+                </ul>
+              </div>
+            </div>
+            
+            <!-- Opus 4 Pricing -->
+            <div class="bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-xl p-8 border border-purple-500/30">
+              <div class="text-center mb-6">
+                <h3 class="text-2xl font-bold text-white mb-2">Claude Opus 4</h3>
+                <p class="text-gray-300 text-sm">复杂项目、架构设计</p>
+              </div>
+              
+              <div class="space-y-4 mb-6">
+                <div class="flex justify-between items-center">
+                  <span class="text-gray-300">输入价格</span>
+                  <span class="text-purple-400 font-semibold">$15/百万 token</span>
+                </div>
+                <div class="flex justify-between items-center">
+                  <span class="text-gray-300">输出价格</span>
+                  <span class="text-purple-400 font-semibold">$75/百万 token</span>
+                </div>
+              </div>
+              
+              <div class="bg-spotify-dark rounded-lg p-4">
+                <h4 class="text-white font-semibold mb-2">适用场景</h4>
+                <ul class="text-gray-300 text-sm space-y-1">
+                  <li>• 复杂系统架构设计</li>
+                  <li>• 大型项目重构</li>
+                  <li>• 技术方案选型</li>
+                  <li>• 深度性能优化</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Value Proposition -->
+          <div class="bg-spotify-dark rounded-xl p-6">
+            <h4 class="text-lg font-semibold text-white mb-4">性价比分析</h4>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div class="text-center">
+                <div class="text-spotify-green font-semibold">相同价格</div>
+                <div class="text-gray-300 text-sm">获得显著更强的能力</div>
+              </div>
+              <div class="text-center">
+                <div class="text-blue-400 font-semibold">更高准确性</div>
+                <div class="text-gray-300 text-sm">减少重复调用成本</div>
+              </div>
+              <div class="text-center">
+                <div class="text-purple-400 font-semibold">更好代码质量</div>
+                <div class="text-gray-300 text-sm">降低调试时间成本</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Practical Guide Section -->
+      <section id="guide" class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">
+          🔧 实战指南：如何选择和使用 Claude 4
+        </h2>
+        
+        <div class="space-y-8">
+          <!-- Sonnet 4 Guide -->
+          <div class="bg-gradient-to-r from-spotify-light-gray to-gray-800 rounded-2xl p-8">
+            <div class="flex items-start space-x-6">
+              <div class="w-16 h-16 bg-gradient-to-br from-spotify-green to-emerald-500 rounded-2xl flex items-center justify-center flex-shrink-0">
+                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                </svg>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-2xl font-semibold text-white mb-4">Claude Sonnet 4：日常开发的最佳选择</h3>
+                
+                <div class="bg-spotify-dark rounded-xl p-6 mb-6">
+                  <h4 class="text-lg font-semibold text-spotify-green mb-3">GitHub 的选择</h4>
+                  <p class="text-gray-300 leading-relaxed">
+                    GitHub 明确表示将使用 Claude Sonnet 4 作为 GitHub Copilot 新编程代理的驱动模型，这足以证明其在实际编程场景中的优越性能。
+                  </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div class="space-y-4">
+                    <h4 class="text-lg font-semibold text-white">合作伙伴反馈亮点</h4>
+                    <div class="space-y-3">
+                      <div class="bg-spotify-dark rounded-lg p-4">
+                        <div class="text-spotify-green font-medium text-sm">iGent</div>
+                        <div class="text-gray-300 text-sm">导航错误从 20% 降至接近零</div>
+                      </div>
+                      <div class="bg-spotify-dark rounded-lg p-4">
+                        <div class="text-blue-400 font-medium text-sm">Sourcegraph</div>
+                        <div class="text-gray-300 text-sm">软件开发显示实质性飞跃</div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="space-y-4">
+                    <h4 class="text-lg font-semibold text-white">推荐使用场景</h4>
+                    <div class="space-y-2">
+                      <div class="flex items-center space-x-2">
+                        <div class="w-2 h-2 bg-spotify-green rounded-full"></div>
+                        <span class="text-gray-300 text-sm">日常代码编写和调试</span>
+                      </div>
+                      <div class="flex items-center space-x-2">
+                        <div class="w-2 h-2 bg-spotify-green rounded-full"></div>
+                        <span class="text-gray-300 text-sm">API 集成和测试</span>
+                      </div>
+                      <div class="flex items-center space-x-2">
+                        <div class="w-2 h-2 bg-spotify-green rounded-full"></div>
+                        <span class="text-gray-300 text-sm">代码重构和优化</span>
+                      </div>
+                      <div class="flex items-center space-x-2">
+                        <div class="w-2 h-2 bg-spotify-green rounded-full"></div>
+                        <span class="text-gray-300 text-sm">文档生成和维护</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Opus 4 Guide -->
+          <div class="bg-gradient-to-r from-purple-900/50 to-pink-900/50 rounded-2xl p-8">
+            <div class="flex items-start space-x-6">
+              <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center flex-shrink-0">
+                <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/>
+                </svg>
+              </div>
+              <div class="flex-1">
+                <h3 class="text-2xl font-semibold text-white mb-4">Claude Opus 4：复杂项目的专业顾问</h3>
+                
+                <div class="bg-spotify-dark rounded-xl p-6 mb-6">
+                  <h4 class="text-lg font-semibold text-purple-400 mb-3">Rakuten 的验证</h4>
+                  <p class="text-gray-300 leading-relaxed">
+                    Rakuten 通过一个要求苛刻的开源重构项目验证了 Opus 4 的能力，项目独立运行 7 小时并保持持续性能，证明了它在大型、长期项目中的可靠性。
+                  </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div class="space-y-4">
+                    <h4 class="text-lg font-semibold text-white">适用场景</h4>
+                    <div class="space-y-3">
+                      <div class="bg-spotify-dark rounded-lg p-4">
+                        <div class="text-purple-400 font-medium text-sm">长期项目</div>
+                        <div class="text-gray-300 text-sm">持续数小时的大型重构项目</div>
+                      </div>
+                      <div class="bg-spotify-dark rounded-lg p-4">
+                        <div class="text-purple-400 font-medium text-sm">架构设计</div>
+                        <div class="text-gray-300 text-sm">复杂的系统架构设计</div>
+                      </div>
+                      <div class="bg-spotify-dark rounded-lg p-4">
+                        <div class="text-purple-400 font-medium text-sm">技术决策</div>
+                        <div class="text-gray-300 text-sm">需要深度思考的技术选型</div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div class="space-y-4">
+                    <h4 class="text-lg font-semibold text-white">企业反馈</h4>
+                    <div class="space-y-2">
+                      <div class="flex items-center space-x-2">
+                        <div class="w-2 h-2 bg-purple-400 rounded-full"></div>
+                        <span class="text-gray-300 text-sm">Block：提升代码质量同时保持性能</span>
+                      </div>
+                      <div class="flex items-center space-x-2">
+                        <div class="w-2 h-2 bg-purple-400 rounded-full"></div>
+                        <span class="text-gray-300 text-sm">Cognition：处理其他模型无法解决的挑战</span>
+                      </div>
+                      <div class="flex items-center space-x-2">
+                        <div class="w-2 h-2 bg-purple-400 rounded-full"></div>
+                        <span class="text-gray-300 text-sm">Cursor：复杂代码库理解的飞跃</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Usage Recommendations -->
+          <div class="bg-spotify-light-gray rounded-2xl p-8">
+            <h3 class="text-2xl font-semibold text-white mb-6 text-center">实际使用建议</h3>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <h4 class="text-lg font-semibold text-white mb-4">工作流程优化</h4>
+                <div class="space-y-3">
+                  <div class="flex items-center justify-between bg-spotify-dark rounded-lg p-3">
+                    <span class="text-gray-300">日常开发</span>
+                    <span class="text-spotify-green text-sm font-medium">Claude Sonnet 4</span>
+                  </div>
+                  <div class="flex items-center justify-between bg-spotify-dark rounded-lg p-3">
+                    <span class="text-gray-300">复杂问题</span>
+                    <span class="text-blue-400 text-sm font-medium">Claude Sonnet 4 Thinking</span>
+                  </div>
+                  <div class="flex items-center justify-between bg-spotify-dark rounded-lg p-3">
+                    <span class="text-gray-300">重大架构决策</span>
+                    <span class="text-purple-400 text-sm font-medium">Claude Opus 4</span>
+                  </div>
+                  <div class="flex items-center justify-between bg-spotify-dark rounded-lg p-3">
+                    <span class="text-gray-300">综合性任务</span>
+                    <span class="text-pink-400 text-sm font-medium">Claude Opus 4 Thinking</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div>
+                <h4 class="text-lg font-semibold text-white mb-4">成本控制策略</h4>
+                <div class="space-y-4">
+                  <div class="bg-spotify-dark rounded-lg p-4">
+                    <div class="flex items-center justify-between mb-2">
+                      <span class="text-spotify-green">80% 任务</span>
+                      <span class="text-gray-300 text-sm">Sonnet 4</span>
+                    </div>
+                    <div class="w-full bg-gray-700 rounded-full h-2">
+                      <div class="bg-spotify-green h-2 rounded-full" style="width: 80%"></div>
+                    </div>
+                  </div>
+                  
+                  <div class="bg-spotify-dark rounded-lg p-4">
+                    <div class="flex items-center justify-between mb-2">
+                      <span class="text-blue-400">15% 复杂任务</span>
+                      <span class="text-gray-300 text-sm">Sonnet 4 Thinking</span>
+                    </div>
+                    <div class="w-full bg-gray-700 rounded-full h-2">
+                      <div class="bg-blue-400 h-2 rounded-full" style="width: 15%"></div>
+                    </div>
+                  </div>
+                  
+                  <div class="bg-spotify-dark rounded-lg p-4">
+                    <div class="flex items-center justify-between mb-2">
+                      <span class="text-purple-400">5% 关键任务</span>
+                      <span class="text-gray-300 text-sm">Opus 4</span>
+                    </div>
+                    <div class="w-full bg-gray-700 rounded-full h-2">
+                      <div class="bg-purple-400 h-2 rounded-full" style="width: 5%"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Conclusion -->
+      <section class="mb-16">
+        <div class="bg-gradient-to-br from-spotify-green via-emerald-500 to-cyan-500 rounded-2xl p-8 text-center">
+          <h2 class="text-3xl font-bold text-white mb-6">💡 结语：编程的新时代已经来临</h2>
+          <p class="text-xl text-white/90 leading-relaxed mb-8 max-w-4xl mx-auto">
+            Claude 4 的发布标志着 AI 编程助手进入了一个新的发展阶段。不仅仅是 72.5% 和 72.7% 的 SWE-bench 成绩，更重要的是来自 Cursor、GitHub、Replit 等知名开发工具厂商的实际验证和采用。
+          </p>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+            <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+              <h3 class="text-lg font-semibold text-white mb-3">五大核心功能</h3>
+              <p class="text-white/80 text-sm leading-relaxed">
+                扩展思维与工具使用、并行工具执行、增强记忆、精准指令遵循、减少黑客行为——共同构建了一个更可靠、更智能的 AI 编程伙伴。
+              </p>
+            </div>
+            
+            <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6">
+              <h3 class="text-lg font-semibold text-white mb-3">Claude Code 正式发布</h3>
+              <p class="text-white/80 text-sm leading-relaxed">
+                将 AI 编程助手从实验室带到了每个开发者的日常工作流中，这不是简单的工具升级，而是开发范式的根本性变革。
+              </p>
+            </div>
+          </div>
+          
+          <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a href="https://www.anthropic.com" target="_blank" class="bg-white text-gray-900 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
+              立即体验 Claude 4
+            </a>
+            <a href="https://www.anthropic.com/claude-code" target="_blank" class="bg-white/20 text-white px-8 py-3 rounded-full font-semibold hover:bg-white/30 transition-colors">
+              下载 Claude Code
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
     <!-- Footer -->
-    <footer class="bg-spotify-gray border-t border-gray-700 mt-16 py-8">
-      <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center">
-          <div class="text-gray-400 text-sm mb-2">Claude 4 深度解析原型 - 采用 Spotify 风格设计</div>
-          <div class="text-gray-500 text-xs">
-            技术栈：HTML5 + Tailwind CSS + Alpine.js | 响应式设计 | 现代浏览器支持
+    <footer class="bg-spotify-gray border-t border-gray-700 mt-16 py-12">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+          <div>
+            <h3 class="text-lg font-semibold text-white mb-4">相关链接</h3>
+            <div class="space-y-2">
+              <a href="https://www.anthropic.com" target="_blank" class="block text-gray-400 hover:text-spotify-green text-sm transition-colors">Anthropic 官网</a>
+              <a href="https://www.anthropic.com/claude-code" target="_blank" class="block text-gray-400 hover:text-spotify-green text-sm transition-colors">Claude Code 下载</a>
+              <a href="https://www.cursor.com" target="_blank" class="block text-gray-400 hover:text-spotify-green text-sm transition-colors">Cursor IDE 集成</a>
+            </div>
+          </div>
+          
+          <div>
+            <h3 class="text-lg font-semibold text-white mb-4">云服务平台</h3>
+            <div class="space-y-2">
+              <a href="https://aws.amazon.com/bedrock/" target="_blank" class="block text-gray-400 hover:text-spotify-green text-sm transition-colors">Amazon Bedrock</a>
+              <a href="https://cloud.google.com/vertex-ai" target="_blank" class="block text-gray-400 hover:text-spotify-green text-sm transition-colors">Google Cloud Vertex AI</a>
+            </div>
+          </div>
+          
+          <div>
+            <h3 class="text-lg font-semibold text-white mb-4">文章标签</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-2 py-1 bg-spotify-green/20 text-spotify-green text-xs rounded-full">#Claude4</span>
+              <span class="px-2 py-1 bg-purple-500/20 text-purple-400 text-xs rounded-full">#AI编程</span>
+              <span class="px-2 py-1 bg-blue-500/20 text-blue-400 text-xs rounded-full">#ClaudeCode</span>
+              <span class="px-2 py-1 bg-emerald-500/20 text-emerald-400 text-xs rounded-full">#开发工具</span>
+            </div>
+          </div>
+          
+          <div>
+            <h3 class="text-lg font-semibold text-white mb-4">文章信息</h3>
+            <div class="space-y-2 text-sm text-gray-400">
+              <div>发布日期：2025年5月23日</div>
+              <div>作者：<a href="https://twitter.com/scofieldfee" target="_blank" class="text-blue-400 hover:text-blue-300 transition-colors">@scofieldfee</a></div>
+              <div>阅读时间：约 15 分钟</div>
+              <div>字数：约 8,000 字</div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="border-t border-gray-700 pt-8">
+          <div class="text-center text-gray-400 text-sm">
+            <p>本页面由 Claude 4 生成 ｜ 采用 Spotify 风格设计</p>
+            <p class="mt-2">技术栈：HTML5 + Tailwind CSS + Alpine.js + Chart.js | 响应式设计 | 现代浏览器支持</p>
           </div>
         </div>
       </div>
     </footer>
 
+    <!-- Scroll to Top Button -->
+    <button 
+      @click="scrollToTop()" 
+      x-show="showScrollTop"
+      x-transition
+      class="fixed bottom-8 right-8 w-12 h-12 bg-gradient-to-br from-spotify-green to-emerald-500 rounded-full flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300 z-50"
+    >
+      <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"/>
+      </svg>
+    </button>
+
     <script src="assets/js/script.js"></script>
+    
+    <!-- Chart Initialization Script -->
+    <script>
+      function articleApp() {
+        return {
+          showToc: false,
+          showScrollTop: false,
+          
+          init() {
+            // Initialize performance chart
+            this.initPerformanceChart();
+            
+            // Scroll listener for scroll-to-top button
+            window.addEventListener('scroll', () => {
+              this.showScrollTop = window.pageYOffset > 300;
+            });
+          },
+          
+          initPerformanceChart() {
+            const ctx = document.getElementById('performanceChart');
+            if (ctx) {
+              new Chart(ctx, {
+                type: 'bar',
+                data: {
+                  labels: [
+                    'Opus 4',
+                    'Sonnet 4', 
+                    'Sonnet 3.7',
+                    'OpenAI\nCodex-1',
+                    'OpenAI\no3',
+                    'OpenAI\nGPT-4.1',
+                    'Gemini\n2.5 Pro'
+                  ],
+                  datasets: [{
+                    label: 'SWE-bench 验证准确率 (%)',
+                    data: [72.5, 72.7, 62.3, 70.3, 72.1, 54.6, 63.2],
+                    backgroundColor: [
+                      '#FF8C42', // Opus 4 - 橙色
+                      '#FF8C42', // Sonnet 4 - 橙色
+                      '#9CA3AF', // Sonnet 3.7 - 灰色
+                      '#9CA3AF', // OpenAI Codex-1 - 灰色
+                      '#9CA3AF', // OpenAI o3 - 灰色
+                      '#9CA3AF', // OpenAI GPT-4.1 - 灰色
+                      '#9CA3AF'  // Gemini 2.5 Pro - 灰色
+                    ],
+                    borderColor: [
+                      '#E5751F', // Opus 4
+                      '#E5751F', // Sonnet 4
+                      '#6B7280', // 其他模型
+                      '#6B7280',
+                      '#6B7280', 
+                      '#6B7280',
+                      '#6B7280'
+                    ],
+                    borderWidth: 1,
+                    borderRadius: 4,
+                    borderSkipped: false,
+                  }]
+                },
+                options: {
+                  responsive: true,
+                  maintainAspectRatio: false,
+                  plugins: {
+                    title: {
+                      display: true,
+                      text: 'Software engineering',
+                      color: '#FFFFFF',
+                      font: {
+                        size: 18,
+                        weight: 'bold'
+                      },
+                      padding: {
+                        bottom: 10
+                      }
+                    },
+                    subtitle: {
+                      display: true,
+                      text: 'SWE-bench verified',
+                      color: '#9CA3AF',
+                      font: {
+                        size: 14
+                      },
+                      padding: {
+                        bottom: 20
+                      }
+                    },
+                    legend: {
+                      display: false
+                    },
+                    tooltip: {
+                      backgroundColor: '#1F2937',
+                      titleColor: '#FFFFFF',
+                      bodyColor: '#FFFFFF',
+                      borderColor: '#374151',
+                      borderWidth: 1,
+                      callbacks: {
+                        title: function(context) {
+                          return context[0].label.replace('\n', ' ');
+                        },
+                        label: function(context) {
+                          return `准确率: ${context.parsed.y}%`;
+                        },
+                        afterLabel: function(context) {
+                          // 为Claude 4系列添加额外信息
+                          if (context.dataIndex === 0) {
+                            return ['', '79.4% with parallel real-time compute'];
+                          } else if (context.dataIndex === 1) {
+                            return ['', '80.2% with parallel real-time compute'];
+                          }
+                          return '';
+                        }
+                      }
+                    }
+                  },
+                  scales: {
+                    y: {
+                      beginAtZero: true,
+                      max: 80,
+                      title: {
+                        display: true,
+                        text: 'ACCURACY',
+                        color: '#9CA3AF',
+                        font: {
+                          size: 12,
+                          weight: 'bold'
+                        }
+                      },
+                      grid: {
+                        color: '#374151',
+                        lineWidth: 0.5
+                      },
+                      ticks: {
+                        color: '#9CA3AF',
+                        font: {
+                          size: 11
+                        }
+                      }
+                    },
+                    x: {
+                      grid: {
+                        display: false
+                      },
+                      ticks: {
+                        color: '#9CA3AF',
+                        font: {
+                          size: 11
+                        },
+                        maxRotation: 0,
+                        minRotation: 0
+                      }
+                    }
+                  },
+                  animation: {
+                    duration: 1500,
+                    easing: 'easeInOutQuart'
+                  },
+                  layout: {
+                    padding: {
+                      top: 10,
+                      right: 20,
+                      bottom: 10,
+                      left: 20
+                    }
+                  }
+                }
+              });
+            }
+          },
+          
+          toggleTheme() {
+            // Theme toggle functionality
+            console.log('Theme toggle');
+          },
+          
+          scrollToContent() {
+            document.getElementById('performance').scrollIntoView({ 
+              behavior: 'smooth' 
+            });
+          },
+          
+          scrollToTop() {
+            window.scrollTo({ 
+              top: 0, 
+              behavior: 'smooth' 
+            });
+          }
+        }
+      }
+
+      // Smooth scroll for navigation links
+      document.addEventListener('DOMContentLoaded', function() {
+        const links = document.querySelectorAll('a[href^="#"]');
+        links.forEach(link => {
+          link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+              target.scrollIntoView({ behavior: 'smooth' });
+            }
+          });
+        });
+      });
+    </script>
   </body>
-</html>
-
-<script>
-  function prototypeApp() {
-    return {
-      isDark: true,
-      viewMode: "grid",
-      searchQuery: "",
-      showMobilePreview: false,
-      mobilePreviewUrl: "",
-
-      toggleTheme() {
-        this.isDark = !this.isDark;
-        // 实际项目中可以切换主题
-      },
-
-      previewMobile(url) {
-        this.mobilePreviewUrl = url;
-        this.showMobilePreview = true;
-      },
-    };
-  }
-</script>
+</html> 

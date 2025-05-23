@@ -573,3 +573,333 @@ if (document.readyState === "loading") {
 
 // 导出到全局作用域
 window.ClaudeApp = ClaudeApp;
+
+// SEO 优化扩展模块
+window.ClaudeApp.SEO = {
+  // 初始化SEO功能
+  init() {
+    this.setupLazyLoading();
+    this.setupImageOptimization();
+    this.trackPageViews();
+    this.setupRichSnippets();
+    this.monitorPerformance();
+    this.setupSocialSharing();
+    console.log("🔍 SEO 优化模块已初始化");
+  },
+
+  // 懒加载设置
+  setupLazyLoading() {
+    if ("IntersectionObserver" in window) {
+      const lazyImages = document.querySelectorAll("img[data-src], iframe[data-src]");
+
+      const imageObserver = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const element = entry.target;
+              if (element.dataset.src) {
+                element.src = element.dataset.src;
+                element.removeAttribute("data-src");
+                element.classList.remove("lazy");
+                observer.unobserve(element);
+              }
+            }
+          });
+        },
+        {
+          rootMargin: "50px 0px",
+          threshold: 0.1,
+        }
+      );
+
+      lazyImages.forEach((image) => imageObserver.observe(image));
+    }
+  },
+
+  // 图片优化
+  setupImageOptimization() {
+    const images = document.querySelectorAll("img");
+    images.forEach((img) => {
+      // 添加loading属性
+      if (!img.hasAttribute("loading")) {
+        img.setAttribute("loading", "lazy");
+      }
+
+      // 添加decode属性
+      if (!img.hasAttribute("decoding")) {
+        img.setAttribute("decoding", "async");
+      }
+
+      // 处理图片加载错误
+      img.addEventListener("error", () => {
+        img.style.display = "none";
+        console.warn(`图片加载失败: ${img.src}`);
+      });
+    });
+  },
+
+  // 页面浏览量统计
+  trackPageViews() {
+    // 发送页面浏览事件到Google Analytics（如果存在）
+    if (typeof gtag !== "undefined") {
+      gtag("config", "GA_MEASUREMENT_ID", {
+        page_title: document.title,
+        page_location: window.location.href,
+      });
+    }
+
+    // 记录阅读进度
+    this.trackReadingProgress();
+  },
+
+  // 阅读进度追踪
+  trackReadingProgress() {
+    const article = document.querySelector("main");
+    if (!article) return;
+
+    let maxScrollPercentage = 0;
+    const readingMilestones = [25, 50, 75, 100];
+    const triggeredMilestones = new Set();
+
+    const calculateScrollPercentage = () => {
+      const scrollTop = window.pageYOffset;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      return Math.round((scrollTop / docHeight) * 100);
+    };
+
+    const handleScroll = ClaudeApp.throttle(() => {
+      const scrollPercentage = calculateScrollPercentage();
+      maxScrollPercentage = Math.max(maxScrollPercentage, scrollPercentage);
+
+      readingMilestones.forEach((milestone) => {
+        if (scrollPercentage >= milestone && !triggeredMilestones.has(milestone)) {
+          triggeredMilestones.add(milestone);
+
+          // 发送阅读进度事件
+          if (typeof gtag !== "undefined") {
+            gtag("event", "reading_progress", {
+              event_category: "engagement",
+              event_label: `${milestone}%`,
+              value: milestone,
+            });
+          }
+
+          console.log(`📖 阅读进度: ${milestone}%`);
+        }
+      });
+    }, 250);
+
+    window.addEventListener("scroll", handleScroll);
+  },
+
+  // 设置富文本片段
+  setupRichSnippets() {
+    // 添加面包屑导航结构化数据
+    this.addBreadcrumbSchema();
+
+    // 添加FAQ结构化数据
+    this.addFAQSchema();
+
+    // 添加阅读时间
+    this.addReadingTime();
+  },
+
+  // 面包屑结构化数据
+  addBreadcrumbSchema() {
+    const breadcrumbSchema = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: "首页",
+          item: window.location.origin,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "Claude 4 深度解析",
+          item: window.location.href,
+        },
+      ],
+    };
+
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.textContent = JSON.stringify(breadcrumbSchema);
+    document.head.appendChild(script);
+  },
+
+  // FAQ结构化数据
+  addFAQSchema() {
+    const faqs = [
+      {
+        question: "Claude 4 和 Claude 3.5 有什么区别？",
+        answer:
+          "Claude 4 在SWE-bench测试中达到72.5%-72.7%的成绩，相比Claude 3.5有显著提升。主要改进包括扩展思维、并行工具执行、增强记忆等五大核心功能。",
+      },
+      {
+        question: "Claude Code 如何与 IDE 集成？",
+        answer:
+          "Claude Code 提供VS Code和JetBrains的Beta扩展，支持内联编辑界面和GitHub Actions集成。可以通过运行 /install-github-app 命令安装GitHub应用。",
+      },
+      {
+        question: "Claude 4 的定价策略是什么？",
+        answer:
+          "Claude Sonnet 4 输入价格为$3/百万token，输出价格为$15/百万token。Claude Opus 4 输入价格为$15/百万token，输出价格为$75/百万token。",
+      },
+    ];
+
+    const faqSchema = {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
+    };
+
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.textContent = JSON.stringify(faqSchema);
+    document.head.appendChild(script);
+  },
+
+  // 添加阅读时间
+  addReadingTime() {
+    const article = document.querySelector("main");
+    if (!article) return;
+
+    const text = article.textContent || "";
+    const wordsPerMinute = 200; // 中文阅读速度约200字/分钟
+    const readingTime = Math.ceil(text.length / wordsPerMinute);
+
+    // 更新页面中的阅读时间显示
+    const readingTimeElements = document.querySelectorAll("[data-reading-time]");
+    readingTimeElements.forEach((element) => {
+      element.textContent = `约 ${readingTime} 分钟阅读`;
+    });
+  },
+
+  // 性能监控
+  monitorPerformance() {
+    // 监控Core Web Vitals
+    if ("web-vital" in window) {
+      const sendToAnalytics = (metric) => {
+        if (typeof gtag !== "undefined") {
+          gtag("event", metric.name, {
+            event_category: "Web Vitals",
+            value: Math.round(metric.value),
+            non_interaction: true,
+          });
+        }
+      };
+
+      // 监控关键性能指标
+      ["CLS", "FID", "FCP", "LCP", "TTFB"].forEach((metric) => {
+        if (typeof webVitals !== "undefined" && webVitals[`get${metric}`]) {
+          webVitals[`get${metric}`](sendToAnalytics);
+        }
+      });
+    }
+
+    // 页面加载性能
+    window.addEventListener("load", () => {
+      const navigation = performance.getEntriesByType("navigation")[0];
+      if (navigation) {
+        console.log("⚡ 页面性能指标:", {
+          DNS查询: `${navigation.domainLookupEnd - navigation.domainLookupStart}ms`,
+          TCP连接: `${navigation.connectEnd - navigation.connectStart}ms`,
+          页面加载: `${navigation.loadEventEnd - navigation.loadEventStart}ms`,
+          DOM准备: `${navigation.domContentLoadedEventEnd - navigation.navigationStart}ms`,
+        });
+      }
+    });
+  },
+
+  // 社交分享设置
+  setupSocialSharing() {
+    // 动态更新分享链接
+    const shareButtons = document.querySelectorAll("[data-share]");
+    shareButtons.forEach((button) => {
+      const platform = button.dataset.share;
+      const url = encodeURIComponent(window.location.href);
+      const title = encodeURIComponent(document.title);
+      const description = encodeURIComponent(document.querySelector('meta[name="description"]')?.content || "");
+
+      let shareUrl = "";
+      switch (platform) {
+        case "twitter":
+          shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${title}`;
+          break;
+        case "facebook":
+          shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+          break;
+        case "linkedin":
+          shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
+          break;
+        case "weibo":
+          shareUrl = `https://service.weibo.com/share/share.php?url=${url}&title=${title}`;
+          break;
+      }
+
+      if (shareUrl) {
+        button.addEventListener("click", (e) => {
+          e.preventDefault();
+          window.open(shareUrl, "_blank", "width=600,height=400");
+        });
+      }
+    });
+  },
+
+  // 生成站点地图数据
+  generateSitemapData() {
+    const pages = [
+      {
+        url: window.location.origin + window.location.pathname,
+        lastmod: new Date().toISOString(),
+        changefreq: "weekly",
+        priority: "1.0",
+      },
+    ];
+
+    // 添加锚点链接
+    const anchors = document.querySelectorAll("[id]");
+    anchors.forEach((anchor) => {
+      if (anchor.id && anchor.id !== "top") {
+        pages.push({
+          url: `${window.location.origin}${window.location.pathname}#${anchor.id}`,
+          lastmod: new Date().toISOString(),
+          changefreq: "monthly",
+          priority: "0.8",
+        });
+      }
+    });
+
+    return pages;
+  },
+};
+
+// 初始化SEO模块
+document.addEventListener("DOMContentLoaded", () => {
+  ClaudeApp.SEO.init();
+});
+
+// Service Worker 注册（用于PWA和缓存优化）
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker
+      .register("/claude-introduce/sw.js")
+      .then((registration) => {
+        console.log("💾 Service Worker 注册成功:", registration);
+      })
+      .catch((error) => {
+        console.log("❌ Service Worker 注册失败:", error);
+      });
+  });
+}

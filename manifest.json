@@ -1,0 +1,130 @@
+{
+  "name": "Claude 4 深度解析：AI 编程新王者如何重塑开发生态",
+  "short_name": "Claude 4 解析",
+  "description": "Claude 4 深度技术解析：从性能测试到实战指南，全面解读AI编程助手的革命性升级",
+  "start_url": "/claude-introduce/",
+  "display": "standalone",
+  "background_color": "#121212",
+  "theme_color": "#1DB954",
+  "orientation": "portrait-primary",
+  "scope": "/claude-introduce/",
+  "lang": "zh-CN",
+  "dir": "ltr",
+  "categories": ["productivity", "education", "technology"],
+  "screenshots": [
+    {
+      "src": "assets/images/screenshot-desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Claude 4 深度解析桌面版界面"
+    },
+    {
+      "src": "assets/images/screenshot-mobile.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Claude 4 深度解析移动版界面"
+    }
+  ],
+  "icons": [
+    {
+      "src": "assets/images/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/images/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/images/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/images/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/images/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/images/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/images/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/images/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "性能测试",
+      "short_name": "性能",
+      "description": "查看 Claude 4 SWE-bench 性能测试结果",
+      "url": "/claude-introduce/#performance",
+      "icons": [
+        {
+          "src": "assets/images/shortcut-performance.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "实战指南",
+      "short_name": "指南",
+      "description": "如何选择和使用 Claude 4",
+      "url": "/claude-introduce/#guide",
+      "icons": [
+        {
+          "src": "assets/images/shortcut-guide.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Claude Code",
+      "short_name": "Code",
+      "description": "Claude Code IDE 集成详情",
+      "url": "/claude-introduce/#claude-code",
+      "icons": [
+        {
+          "src": "assets/images/shortcut-code.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "related_applications": [
+    {
+      "platform": "web",
+      "url": "https://www.anthropic.com/claude-code",
+      "id": "claude-code"
+    }
+  ],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "handle_links": "preferred"
+}
